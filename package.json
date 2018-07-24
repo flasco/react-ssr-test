@@ -32,6 +32,11 @@
     "babel-preset-react": "6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "6.24.1",
-    "css-modules-require-hook": "^4.2.3"
+    "css-modules-require-hook": "^4.2.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-watch": "^5.0.1",
+    "require-dir": "^1.0.0"
   }
 }

@@ -8,6 +8,7 @@
 
 # production
 /server_dist
+/client_dist
 
 # misc
 .DS_Store

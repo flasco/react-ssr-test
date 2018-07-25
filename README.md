@@ -56,6 +56,4 @@ make install
 ```bash
 make dev # 开启服务端
 make watch # 开启客户端资源监视
-yarn client-dist # 开启客户端的babel监视
-yarn sercer-dist # 开启客户端的babel监视
 ```

@@ -55,5 +55,5 @@ make install
 ## 日常开发
 ```bash
 make dev # 开启服务端
-make watch # 开启客户端资源监视
+make watch # 开启webpack资源编译
 ```

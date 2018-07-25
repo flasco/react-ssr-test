@@ -89,8 +89,8 @@ gulp.task("watch", () => {
 				]
 			}))
 			.pipe(gulp.dest('server_dist'));
-
-		// gulp.watch('client/src/**/*.js', ['client-babel']);
+		// 下面注释掉的是全量编译，上面是变量编译，性能更高。
+		// gulp.watch('client/src/**/*.js', ['client-babel']); 
 		// gulp.watch('server/**/*.js', ['server-babel']);
 	})
 });

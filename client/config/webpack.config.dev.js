@@ -226,7 +226,7 @@ module.exports = {
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new ExtractTextPlugin({
-      filename: "static/css/styles.css",
+      filename: "static/css/[name].css",
       disable: false,
       allChunks: true
     }),

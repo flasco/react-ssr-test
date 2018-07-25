@@ -15,6 +15,10 @@
       "js": "node --harmony"
   },
   "watch": [
+      "server_dist/**/*",
+      "client_dist/**/*",
+      "client/local/**/*",
+      "client/build/**/*"
   ],
   "env": {
       "NODE_ENV": "development"

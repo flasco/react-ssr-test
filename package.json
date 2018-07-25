@@ -11,6 +11,7 @@
     "client-dist": "rm -rf client_dist && NODE_ENV=development npx babel client/src -d client_dist --copy-files -i css --presets react,es2015 -w "
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "koa": "^2.5.2",
     "koa-ejs": "^4.1.1",
     "koa-router": "^7.4.0",
@@ -36,6 +37,8 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sequence": "^1.0.0",
     "gulp-watch": "^5.0.1",
     "require-dir": "^1.0.0"
   }

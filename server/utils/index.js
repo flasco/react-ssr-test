@@ -1,5 +1,4 @@
-import asset_prd from '../../client/build/asset-prd.json'
-import asset_dev from '../../client/local/asset-dev.json';
+let asset = null;
 
 export function getScript(name) {
   return `<script src="${getUrl(name)}"></script>`
@@ -10,7 +9,18 @@ export function getStylesheet(name) {
 }
 
 function getUrl(name) {
-  if (process.env.NODE_ENV == 'production') {
-    return asset_prd[name];
-  } else return asset_dev[name];
+  return getAsset()[name];
+}
+
+function getAsset() {
+  if (asset == null) {
+    console.log(process.env.NODE_ENV)
+    if (process.env.NODE_ENV == 'production') {
+      console.log('action?')
+      asset = require('../../client/build/asset-prd.json');
+    } else {
+      asset = require('../../client/local/asset-dev.json');
+    }
+  }
+  return asset;
 }

@@ -12,3 +12,5 @@ dev:
 
 watch:
 	cd client && yarn watch
+dev:
+	npx gulp watch # 使用node 8环境

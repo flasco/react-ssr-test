@@ -2,6 +2,7 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const del = require('del');
+const watch = require('gulp-watch');
 const nodemon = require('gulp-nodemon');
 const gulpSequence = require('gulp-sequence');
 
@@ -63,10 +64,34 @@ gulp.task('copy', ['server-copy', 'client-copy']);
 
 gulp.task('babel', ['server-babel', 'client-babel']);
 
-gulp.task("watch", ()=>{
-	gulpSequence('copy', 'babel', () => {
-		gulp.watch('client/src/**/*.js', ['client-babel']);
-		gulp.watch('server/**/*.js', ['server-babel']);
+gulp.task("watch", () => {
+	gulpSequence('copy', 'babel', 'nodemon', () => {
+		gulp.src('client/src/**/*.js')
+			.pipe(watch('client/src/**/*.js'))
+			.pipe(babel({
+				presets: ['env', 'react'],
+				plugins: [
+					"transform-decorators-legacy",
+					"add-module-exports",
+					"transform-runtime"
+				]
+			}))
+			.pipe(gulp.dest('client_dist'));
+
+		gulp.src('server/**/*.js')
+			.pipe(watch('server/**/*.js'))
+			.pipe(babel({
+				presets: ['env'],
+				plugins: [
+					"transform-decorators-legacy",
+					"add-module-exports",
+					"transform-runtime"
+				]
+			}))
+			.pipe(gulp.dest('server_dist'));
+
+		// gulp.watch('client/src/**/*.js', ['client-babel']);
+		// gulp.watch('server/**/*.js', ['server-babel']);
 	})
 });
 

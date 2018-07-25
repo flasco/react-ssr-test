@@ -1,6 +1,6 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
-import App from './page/App';
+import App from './page/home';
 import registerServiceWorker from './registerServiceWorker';
 
 

@@ -10,7 +10,6 @@ router.get('*', async (ctx, next) => {
   // let currentTime = new Date().toDateString();
   const template = React.createElement(App);
   const html = ReactDOMServer.renderToNodeStream(template);
-  // console.log(html)
 
   await ctx.render('index', {
     html,

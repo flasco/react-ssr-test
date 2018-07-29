@@ -17,7 +17,7 @@ const clientConf = {
 }
 
 const serverConf = {
-  presets: ['env'],
+  presets: ['react', 'env'],
   babelrc: false,
   plugins: [
     "add-module-exports",

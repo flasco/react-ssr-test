@@ -8,7 +8,7 @@
   "scripts": {
     "start": "yarn server-dist && nodemon ./server_dist/server.dev.js",
     "server-dist": "rm -rf server_dist && npx babel server -d server_dist --copy-files",
-    "client-dist": "rm -rf client_dist && NODE_ENV=development npx babel client/src -d client_dist --copy-files -i css --presets react,env -w "
+    "client-dist": "rm -rf client_dist && NODE_ENV=development npx babel client/src -d client_dist --copy-files -i css --presets react,env --plugins transform-class-properties "
   },
   "dependencies": {
     "antd-mobile": "^2.2.2",
@@ -26,14 +26,10 @@
     "asset-require-hook": "^1.2.0",
     "babel-cli": "6.24.1",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-decorators": "6.24.1",
-    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-polyfill": "6.23.0",
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "6.23.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "6.24.1",
     "css-modules-require-hook": "^4.2.3",
     "del": "^3.0.0",
     "gulp": "^3.9.1",

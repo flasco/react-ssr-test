@@ -10,7 +10,6 @@ const clientConf = {
   babelrc: false,
   presets: ['react', 'env'],
   plugins: [
-    "transform-decorators-legacy",
     "transform-class-properties",
     "add-module-exports",
     "transform-runtime"
@@ -21,7 +20,6 @@ const serverConf = {
   presets: ['env'],
   babelrc: false,
   plugins: [
-    "transform-decorators-legacy",
     "add-module-exports",
     "transform-runtime"
   ]

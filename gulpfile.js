@@ -52,8 +52,6 @@ gulp.task('server-copy', ['server-dist-del'], () => {
 });
 
 gulp.task('client-babel', () => {
-  // 设置当前环境为development
-  process.env.NODE_ENV = 'development';
   return gulp.src('client/src/**/*.js')
     .pipe(babel(clientConf))
     .pipe(gulp.dest('client_dist'));
@@ -69,7 +67,9 @@ gulp.task('copy', ['server-copy', 'client-copy']);
 
 gulp.task('babel', ['server-babel', 'client-babel']);
 
-gulp.task("watch", () => {
+gulp.task('watch', () => {
+    // 设置当前环境为development
+    process.env.NODE_ENV = 'development';
   gulpSequence('copy', 'babel', 'nodemon', () => {
     gulp.src('client/src/**/*.js')
       .pipe(watch('client/src/**/*.js'))

@@ -54,7 +54,7 @@ module.exports = {
       // initialization, it doesn't blow up the WebpackDevServer client, and
       // changing JS code would still trigger a refresh.
     ]),
-    react: ['react', 'react-dom'],
+    vendor: ['react', 'react-dom', 'antd-mobile'],
 
   },
   output: {
@@ -237,7 +237,7 @@ module.exports = {
       allChunks: true
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'react',
+      name: 'vendor',
     }),
     new ManifestPlugin({
       fileName: 'asset-dev.json',

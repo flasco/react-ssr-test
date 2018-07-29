@@ -7,14 +7,13 @@ import { getScript, getStylesheet } from '../utils';
 const router = Router();
 
 router.get('*', async (ctx, next) => {
-  // let currentTime = new Date().toDateString();
   const template = React.createElement(App);
-  const html = ReactDOMServer.renderToNodeStream(template);
+  const html = ReactDOMServer.renderToString(template);
 
   await ctx.render('index', {
     html,
     stylesheet: `${getStylesheet('main.css')}`,
-    script: `${getScript('react.js')}${getScript('main.js')}`,
+    script: `${getScript('vendor.js')}${getScript('main.js')}`,
   });
 });
 

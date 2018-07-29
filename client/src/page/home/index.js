@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './sass/app.scss';
-import png from '../../assets/logo.svg';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'Life',
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <p className="st">123123</p>
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-          <img src={png} alt={'量张图'} style={{ width: 20 }} />
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div style={{ position: 'fixed', height: '100%', width: '100%', left: 0, top: 0, }}>
+        <div style={{ display: 'flex', flexDirection: 'row', height: 50, position: 'absolute', bottom: 0, width: '100%',borderTop:'1px solid #ddd' }}>
+          <div style={{ flex: 1, }}>1</div>
+          <div style={{ flex: 1, }}>2</div>
+          <div style={{ flex: 1, }}>3</div>
+        </div>
       </div>
     );
   }

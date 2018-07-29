@@ -13,7 +13,6 @@ const paths = require('./paths');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -174,7 +173,7 @@ module.exports = {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
               fallback: "style-loader",
-              use: ['css-loader','sass-loader'],
+              use: ['css-loader', 'sass-loader'],
             }),
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.

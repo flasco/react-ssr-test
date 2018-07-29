@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import App from '../../client_dist/page/App';
+import App from '../../client_dist/page/home';
 import { getScript, getStylesheet } from '../utils';
 
 const router = Router();

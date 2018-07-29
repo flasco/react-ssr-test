@@ -3,6 +3,5 @@ import { hydrate } from 'react-dom';
 import App from './page/home';
 import registerServiceWorker from './registerServiceWorker';
 
-
 hydrate(<App />, document.getElementById('root'));
 registerServiceWorker();

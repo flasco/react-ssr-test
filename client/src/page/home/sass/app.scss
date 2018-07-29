@@ -22,6 +22,22 @@
   font-size: large;
 }
 
+.App-icon {
+  animation: App-logo-spin 1s linear infinite;
+  width:40px;
+}
+
+#tab-bar.demo {
+  display: flex;
+  flex-direction: column;
+}
+#tab-bar .demoName {
+  height: 40px;
+}
+#tab-bar .demo-preview-item .am-tab-bar {
+  background-color: white;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

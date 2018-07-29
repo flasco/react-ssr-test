@@ -8,9 +8,10 @@
   "scripts": {
     "start": "yarn server-dist && nodemon ./server_dist/server.dev.js",
     "server-dist": "rm -rf server_dist && npx babel server -d server_dist --copy-files",
-    "client-dist": "rm -rf client_dist && NODE_ENV=development npx babel client/src -d client_dist --copy-files -i css --presets react,es2015 -w "
+    "client-dist": "rm -rf client_dist && NODE_ENV=development npx babel client/src -d client_dist --copy-files -i css --presets react,env -w "
   },
   "dependencies": {
+    "antd-mobile": "^2.2.2",
     "fs": "^0.0.1-security",
     "koa": "^2.5.2",
     "koa-ejs": "^4.1.1",

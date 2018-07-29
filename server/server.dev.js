@@ -2,8 +2,15 @@
 
 // css 的转码 hook
 require('css-modules-require-hook')({
-    generateScopedName: '[name]__[local]___[hash:base64:5]'
-  });
+    extensions: ['.scss', '.css'],
+    preprocessCss: (data, filename) =>
+        require('node-sass').renderSync({
+            data,
+            file: filename
+        }).css,
+    camelCase: true,
+    generateScopedName: '[name]__[local]__[hash:base64:8]'
+});
 
 require('asset-require-hook')({
     extensions: ['png', 'jpg', 'svg'],

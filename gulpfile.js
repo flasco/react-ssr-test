@@ -8,7 +8,7 @@ const gulpSequence = require('gulp-sequence');
 
 const clientConf = {
   babelrc: false,
-  presets: ['react', 'env'],
+  presets: ['react', 'env', 'stage-0'],
   plugins: [
     "transform-class-properties",
     "add-module-exports",

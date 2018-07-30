@@ -1,7 +1,8 @@
 import React from 'react';
 import './sass/app.scss';
 import TabBar from 'antd-mobile/lib/tab-bar';
-import 'antd-mobile/dist/antd-mobile.css'
+import 'antd-mobile/dist/antd-mobile.css';
+import { connect } from 'react-redux';
 
 class TabBarExample extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class TabBarExample extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0, backgroundColor: 'white' }}>
         <TabBar
@@ -134,5 +136,10 @@ class TabBarExample extends React.Component {
   }
 }
 
+function select (state) {
+  return {
+    infoText: state.info.text
+  }
+}
 
-export default TabBarExample;
+export default connect(select)(TabBarExample);

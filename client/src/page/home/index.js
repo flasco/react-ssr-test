@@ -3,6 +3,7 @@ import './sass/app.scss';
 import TabBar from 'antd-mobile/lib/tab-bar';
 import 'antd-mobile/dist/antd-mobile.css';
 import { connect } from 'react-redux';
+import FirstView from './first';
 
 class TabBarExample extends React.Component {
   constructor(props) {
@@ -23,7 +24,6 @@ class TabBarExample extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0, backgroundColor: 'white' }}>
         <TabBar
@@ -57,7 +57,7 @@ class TabBarExample extends React.Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+            <FirstView/>
           </TabBar.Item>
           <TabBar.Item
             icon={

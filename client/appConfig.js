@@ -1,5 +1,5 @@
 module.exports = {
   entry: {
-    vendor: ['react', 'react-dom', 'antd-mobile'],
+    vendor: ['react', 'react-dom'],
   }
 };

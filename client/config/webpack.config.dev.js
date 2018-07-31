@@ -54,7 +54,7 @@ module.exports = {
       // initialization, it doesn't blow up the WebpackDevServer client, and
       // changing JS code would still trigger a refresh.
     ]),
-    vendor: ['react', 'react-dom', 'antd-mobile'],
+    vendor: ['react', 'react-dom'],
 
   },
   output: {
